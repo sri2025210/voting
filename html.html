@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Voting System</title>
+
+<style>
+body {
+  text-align: center;
+  font-family: Arial;
+}
+button {
+  padding: 10px;
+  margin: 10px;
+}
+</style>
+
+</head>
+<body>
+
+<h1>Class Representative Voting</h1>
+
+<button onclick="vote('A')">Vote A</button>
+<button onclick="vote('B')">Vote B</button>
+
+<h2 id="result"></h2>
+
+<script>
+let votes = {A:0, B:0};
+let voted = false;
+
+function vote(c) {
+
+  if(voted) {
+    alert("You already voted");
+    return;
+  }
+
+  votes[c]++;
+
+  voted = true;
+
+  document.getElementById("result").innerText =
+    "A: " + votes.A + " B: " + votes.B;
+}
+</script>
+
+</body>
+</html>
